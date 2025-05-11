@@ -52,13 +52,10 @@ details.code-block pre,
 details.code-block pre code {
   margin-bottom: 0;
 }
-  
-  
 
-/* ── tombol bulat hitam / panah putih khusus carousel yang di-inginkan ── */
 #results-carousel .slider-navigation-previous,
 #results-carousel .slider-navigation-next{
-  width:48px; height:48px;           /* lingkaran */
+  width:48px; height:48px;          
   background:#000; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.25);
@@ -67,7 +64,7 @@ details.code-block pre code {
 #results-carousel .slider-navigation-previous svg,
 #results-carousel .slider-navigation-next   svg{
   width:22px; height:22px;
-  stroke:#fff !important;            /* putih */
+  stroke:#fff !important;           
   fill:none !important;
   stroke-width:3;
 }
