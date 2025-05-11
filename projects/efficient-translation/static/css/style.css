@@ -1,0 +1,56 @@
+
+  code.i-code {
+    background-color: #e7e7e9;  
+    color: #1f2937;             
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-size: 0.94em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+
+  table thead th {
+    background-color: #d7d9dc; 
+    color: #111827; 
+  }
+
+
+
+  details.code-block {
+    margin-top: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  details.code-block > summary {
+    background-color: rgba(63, 251, 60, 0.2); 
+    color: #111827;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+
+details.code-block pre {
+  background-color: #2d2d2d;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-top: 0rem;
+
+}
+
+pre code {
+  display: block;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+  details.code-block code {
+    background: none;
+    
+  }
+details.code-block pre,
+details.code-block pre code {
+  margin-bottom: 0;
+}
+  
+  
