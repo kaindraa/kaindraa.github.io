@@ -24,27 +24,28 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta name="description" content="Efficient fine-tuning and inference of LLMs for English–Indonesian translation using LoRA and QLoRA under resource constraints.">
+  <meta property="og:title" content="Efficient Translation of LLMs"/>
+  <meta property="og:description" content="Exploring PEFT techniques like QLoRA for efficient LLM training on limited GPU.">
+  <meta property="og:url" content="https://kaindraa.github.io/projects/efficient-translation/efficient-translation.html"/>
+
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <!-- <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:height" content="630"/> -->
 
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by -->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>Efficient Translation of LLMs</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -63,7 +64,41 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  bulmaCarousel.attach('#results-carousel',{
+    slidesToScroll : 1,
+    slidesToShow   : 1,
+    loop           : true,
+    infinite       : true,
+    autoplay       : true,
+    autoplaySpeed  : 5000,
+    icons:{
+      previous:`<svg viewBox="0 0 24 24">
+                  <polyline points="15 6 9 12 15 18"
+                            stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>`,
+      next:`<svg viewBox="0 0 24 24">
+              <polyline points="9 6 15 12 9 18"
+                        stroke="currentColor"
+                        stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`
+    }
+  });
+
+});
+</script>
+
+
+
 </head>
+
 <body>
 
 
@@ -81,7 +116,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Universitas Indonesia<br>Mei 2025</span>
+                    <span class="author-block">Universitas Indonesia<br>May 2025</span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
@@ -135,6 +170,59 @@
 </section>
 
 
+
+<!-- Results Figure Carousel -->
+<!-- Results Figure Carousel -->
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel" class="carousel results-carousel" style="text-align: center;">
+
+        <div class="item">
+          <img src="static/figures/sacrebleu_all.png" style="width: 70%; height: auto; display: block; margin: 0 auto;">
+          <p class="subtitle mt-4">SacreBLEU scores for all configurations. QLoRA 3B reaches <strong>32.80</strong>.</p>
+        </div>
+
+      <div class="item">
+        <img src="static/figures/loravsqlora_trainingtime.png" style="width: 70%; height: auto; display: block; margin: 0 auto;" alt="Training Time">
+        <p class="subtitle mt-4">
+          Training time comparison between LoRA and QLoRA.<br>
+          QLoRA incurs <strong>27–35%</strong> longer training time depending on the model size.<br>
+          <small class="has-text-grey">*The percentages reflect QLoRA’s performance relative to LoRA.</small>
+        </p>
+      </div>
+
+      <div class="item">
+        <img src="static/figures/loravsqlora_peaktrainingmemory.png" style="width: 70%; height: auto; display: block; margin: 0 auto;" alt="Peak Training Memory">
+        <p class="subtitle mt-4">
+          Peak memory usage during training: QLoRA reduces memory by <strong>16%–53%</strong> compared to LoRA.<br>
+          <small class="has-text-grey">*The percentages reflect QLoRA’s performance relative to LoRA.</small>
+        </p>
+      </div>
+
+        <div class="item">
+          <img src="static/figures/loravsqlora_bleudrop.png" style="width: 70%; height: auto; display: block; margin: 0 auto;" alt="BLEU Drop">
+          <p class="subtitle mt-4">
+            BLEU drop after quantization. QLoRA is more stable in preserving translation quality after quantization.
+          </p>
+        </div>
+
+        <div class="item">
+          <img src="static/figures/inferencetime_perconfig.png" style="width: 70%; height: auto; display: block; margin: 0 auto;" alt="Inference Time">
+          <p class="subtitle mt-4">Inference time increases up to 155.59% with 4-bit quantized models.</p>
+        </div>
+
+        <div class="item">
+          <img src="static/figures/peakinferencememory_perconfig.png" style="width: 70%; height: auto; display: block; margin: 0 auto;" alt="Inference Memory">
+          <p class="subtitle mt-4">Peak memory during inference is not reduced significantly by 4-bit quantization.</p>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- Paper abstract -->
