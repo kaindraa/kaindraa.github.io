@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kaindra Rizq Sachio</title>
+  <meta charset="UTF-8">
+  <title>Kaindra Rizq Sachio</title>
 </head>
 <body style="font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 2rem;">
-  <h1>Kaindra Rizq Sachio</h1>
-  <p>
-    Hello! I'm Kaindra Rizq Sachio, a 4th semester Computer Science student at Universitas Indonesia.
-    I will be publishing my personal projects about Data Science & Artificial Intelligence here.
-  </p>
+  <h1>Kaindra Rizq Sachio</h1>
+  <p>
+    Hello! I'm Kaindra Rizq Sachio, a <strong>5th semester</strong> Computer Science student at Universitas Indonesia.
+    I will be publishing my personal projects about Data Science & Artificial Intelligence here.
+  </p>
 
-  <h2>Projects</h2>
-  <ul>
+  <h2>Projects</h2>
+  <ul>
 
-  <li>
-    <strong>Efficient Fine-Tuning and Inference of LLMs under Resource Constraints for English–Indonesian Translation</strong><br>
-    <span style="color: #3a3b3c; font-size: 0.9em; display: block; margin-top: 4px; text-align: justify;">
-      This project explores <strong>efficient fine-tuning and inference techniques</strong> for Large Language Models (LLMs) under limited resources, focusing on PEFT methods such as LoRA and QLoRA, and 4-bit inference using Qwen2.5 models for English–Indonesian translation.
-    </span>
-    <a href="projects/efficient-translation/efficient-translation.html">Blog</a>
-  </li>
-  <br>
-  <li>
-    <strong>LLM Agent for News Search & Report Generation</strong><br>
-    <span style="color: #3a3b3c; font-size: 0.9em; display: block; margin-top: 4px; text-align: justify;">
-      A <strong>fully automated agent</strong> that <strong>searches real-time news and generates structured reports</strong> based on user-defined topics. Built with LangChain and LangGraph, and powered by DeepSeek and Tavily.
-    </span>
-    <a href="http://52.64.241.238:8501/" target="_blank">Demo</a>
-  </li>
-  <br>
-  <li>
-    <strong>Indonesia Satellite Image Segmentation</strong><br>
-    <span style="color: #3a3b3c; font-size: 0.95em;">
-    A web app for <strong>segmenting Indonesian satellite imagery into land classes</strong> like vegetation, infrastructure, and water using a U-Net model with a VGG16 encoder. Built with transfer learning on a custom-annotated dataset and visualized interactively.
-    </span><br>
-    <a href="https://indonesia-satellite-segmentation.streamlit.app/" target="_blank">Demo</a>
-  </li>
-  <br>
-  <li>
-    <strong>Interpretable Network Threat Detection using CatBoost and SHAP</strong><br>
-    <span style="color:#3a3b3c; font-size: 0.95em;">
-      A web-based system for <strong>detecting and explaining network threats</strong> using a CatBoost classifier and SHAP values. Users can interactively explore <strong>local and global model explanations</strong>, provide feedback on predictions, and understand the influence of features on classification outcomes across multiple attack classes.
-    </span><br>
-    <a href="https://drive.google.com/drive/folders/1man5ODzgt6ED_fPyEFzRUwf_jSyzK3C5" target="_blank">Video</a>
+  <li>
+    <strong>End-to-End Indonesia Automatic License Plate Recognition System</strong><br>
+    <span style="color: #3a3b3c; font-size: 0.9em; display: block; margin-top: 4px; text-align: justify;">
+        (Runner Up – BSS Parking OpenTheGate Hack 2025)<br>
+      Built using self-annotated real-world data, achieving 82% IoU for bounding box, 94% character match for OCR, and 98% accuracy for vehicle classification. Integrated all components into REST API, optimized for end-to-end inference in ~2 seconds on CPU.
+    </span>
+    <br>
+        <a href="https://parkirlokeren.vercel.app/" target="_blank">Lihat Demo</a> | <a href="https://parkirlokeren.vercel.app/" target="_blank">GitHub Repo</a>
+  </li>
+  <br>
+  <li>
+    <strong>Resource-Efficient LLM Instruction Tuning for English–Indonesian Translation</strong><br>
+    <span style="color: #3a3b3c; font-size: 0.9em; display: block; margin-top: 4px; text-align: justify;">
+      Explored 14 configurations across Qwen2.5 models (0.5B–3B) using full fine-tuning, LoRA, QLoRA, and 4-bit quantization, achieving up to 32.80 BLEU. Achieved 53% memory savings QLoRA, at the cost of 27–35% longer training time.
+    </span>
+    <br>
+        <a href="https://kaindraa.github.io/projects/efficient-translation/efficient-translation.html" target="_blank">Baca Blog</a> | <a href="GANTI_DENGAN_LINK_GITHUB_REPO_LLM_TUNING_ANDA_DI_SINI" target="_blank">GitHub Repo</a>
+  </li>
+  <br>
+  <li>
+    <strong>Urban Poverty Prediction in Indonesia via Multisource Multimodal Sensing</strong><br>
+    <span style="color: #3a3b3c; font-size: 0.95em;">
+      Collected and integrated 10+ datasets (satellite-based spectral indices, true-color imagery, atmospheric pollutants). Built U-Net based land cover semantic segmentation with 78% IoU and multimodal regression with Rp50.000 RMSE for city-level poverty line prediction.
+    </span>
+    <br>
+        <a href="https://drive.google.com/file/d/1BQIghp-UdukvgNgabopBvLz63hdyXZNT/view?usp=drive_link" target="_blank">Lihat Demo</a> | <a href="GANTI_DENGAN_LINK_GITHUB_REPO_POVERTY_PREDICTION_ANDA_DI_SINI" target="_blank">GitHub Repo</a>
+  </li>
+  <br>
+  <li>
+    <strong>LLM Agent for News Search & Report Generation</strong><br>
+    <span style="color:#3a3b3c; font-size: 0.95em;">
+      Developed a ChatGPT-like deep research agent for high-quality web content retrieval and synthesis in real time. Integrated LangChain, LangGraph, and external APIs (Tavily, DeepSeek) to orchestrate modular reasoning workflows.
+    </span>
+    <br>
+        <a href="http://52.64.241.238:8501/" target="_blank">Lihat Demo</a> | <a href="GANTI_DENGAN_LINK_GITHUB_REPO_LLM_AGENT_ANDA_DI_SINI" target="_blank">GitHub Repo</a>
+  </li>
 
-    <!-- <a href="https://network-threat-explainer.streamlit.app/" target="_blank">Try App</a> -->
-  </li>
-
-  </ul>
+  </ul>
 </body>
 </html>
