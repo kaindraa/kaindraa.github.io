@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vonote - Vocabulary Tracker, Save & Practice Words</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      background: #fff;
+      color: #1d1d1f;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 24px 40px;
+    }
+
+    /* Header: icon + app info */
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .app-info h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .app-info .subtitle {
+      font-size: 16px;
+      color: #6e6e73;
+      margin-top: 4px;
+    }
+
+    .app-info .coming-soon {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: #007aff;
+      border-radius: 980px;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #d2d2d7;
+      margin: 40px 0;
+    }
+
+    /* Preview section */
+    .preview-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+    }
+
+    .screenshot-carousel {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+    }
+
+    .screenshot-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screenshot-carousel img {
+      height: 500px;
+      border-radius: 16px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-btn.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .carousel-btn.prev { left: -12px; }
+    .carousel-btn.next { right: -12px; }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #d2d2d7;
+      font-size: 14px;
+      color: #6e6e73;
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer a {
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 32px 16px 32px;
+      }
+
+      .app-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+      }
+
+      .app-info h1 {
+        font-size: 22px;
+      }
+
+      .app-info .subtitle {
+        font-size: 14px;
+      }
+
+      .screenshot-carousel img {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="app-header">
+      <img src="assets/vonote-logo.png" alt="Vonote App Icon" class="app-icon">
+      <div class="app-info">
+        <h1>Vonote - Vocabulary Tracker</h1>
+        <p class="subtitle">Save & Practice Words</p>
+        <span class="coming-soon">Coming Soon on the App Store</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 class="preview-title">Preview</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev hidden" onclick="scrollCarousel(-1)" aria-label="Previous">&#8249;</button>
+      <div class="screenshot-carousel" id="carousel">
+        <img src="assets/iPhone %231@2x (1).png" alt="Vonote Screenshot 1">
+        <img src="assets/iPhone %232@2x.png" alt="Vonote Screenshot 2">
+        <img src="assets/iPhone %233@2x.png" alt="Vonote Screenshot 3">
+        <img src="assets/iPhone %234@2x.png" alt="Vonote Screenshot 4">
+        <img src="assets/iPhone %235@2x.png" alt="Vonote Screenshot 5">
+      </div>
+      <button class="carousel-btn next" onclick="scrollCarousel(1)" aria-label="Next">&#8250;</button>
+    </div>
+
+    <div class="footer">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+    </div>
+
+  </div>
+
+  <script>
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    function scrollCarousel(direction) {
+      const scrollAmount = 280;
+      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    function updateButtons() {
+      const { scrollLeft, scrollWidth, clientWidth } = carousel;
+      prevBtn.classList.toggle('hidden', scrollLeft <= 0);
+      nextBtn.classList.toggle('hidden', scrollLeft + clientWidth >= scrollWidth - 1);
+    }
+
+    carousel.addEventListener('scroll', updateButtons);
+    window.addEventListener('load', updateButtons);
+  </script>
+</body>
+</html>
