@@ -40,7 +40,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="effective-date">Effective date: July 4, 2026</p>
+<p class="effective-date">Effective date: August 3, 2026</p>
 
 <p>
   This privacy policy applies to the <strong>Langpush - AI Language Tutor</strong> mobile application
@@ -92,6 +92,17 @@
   capabilities provided by your device platform.
 </p>
 
+<p>
+  In the turn-based voice-practice experience, microphone audio is sent directly
+  to ElevenLabs for real-time speech-to-text. The resulting transcript may be
+  stored with the related conversation. Assistant response text is sent to
+  Inworld or, for some voice features, OpenRouter and its selected text-to-speech
+  model provider to generate spoken audio. These providers receive the content
+  needed to provide the selected voice feature and related technical connection
+  data. Do not use voice features to share sensitive information that you do not
+  want processed by these providers.
+</p>
+
 <h3>4. Usage, Analytics, and Subscription Information</h3>
 <p>The Application may collect information about how you use the service, including:</p>
 <ul>
@@ -105,6 +116,13 @@
   If analytics is enabled in the build you are using, the Application uses
   PostHog for product analytics and session replay. The current configuration
   masks text inputs, images, and protected replay views.
+</p>
+
+<p>
+  The Application may also use Sentry to receive error and crash reports. These
+  reports can include technical and diagnostic information, such as error
+  messages, stack traces, app/device/operating-system information, app version,
+  request identifiers, and, where configured, an internal account identifier.
 </p>
 
 <h3>5. Information Stored Locally on Your Device</h3>
@@ -125,9 +143,15 @@
   <li>Precise location data</li>
   <li>Contacts / phonebook data</li>
   <li>Camera permissions for app features</li>
-  <li>Third-party advertising SDKs</li>
-  <li>Remarketing services for advertising</li>
+  <li>Third-party ads displayed inside the Application</li>
 </ul>
+
+<p>
+  Some builds use the TikTok Business SDK for advertising attribution and
+  conversion measurement. This is not used to display advertisements in the
+  Application. See <a href="#advertising-attribution">Advertising and Attribution</a>
+  for details.
+</p>
 
 <p>
   The current iOS application bundle includes photo-library usage descriptions.
@@ -176,10 +200,28 @@
       <td><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></td>
     </tr>
     <tr>
-      <td><strong>Google AI / Gemini</strong></td>
-      <td>AI-generated replies, translation, feedback generation, and live voice features</td>
-      <td>Conversation content, transcripts, room context, and live voice audio or related inputs required for the feature used</td>
+      <td><strong>Google AI / Gemini and Google Cloud Speech-to-Text</strong></td>
+      <td>AI-generated replies, translation, feedback generation, text-to-speech, speech-to-text, and live voice features</td>
+      <td>Conversation content, transcripts, room context, live voice audio, generated voice scripts, and related inputs required for the feature used</td>
       <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></td>
+    </tr>
+    <tr>
+      <td><strong>ElevenLabs</strong></td>
+      <td>Real-time speech-to-text for turn-based voice practice</td>
+      <td>Microphone audio sent directly from the device for transcription, resulting transcripts, language settings, and technical connection data</td>
+      <td><a href="https://elevenlabs.io/privacy-policy" target="_blank" rel="noopener noreferrer">elevenlabs.io/privacy-policy</a></td>
+    </tr>
+    <tr>
+      <td><strong>Inworld AI</strong></td>
+      <td>Text-to-speech for turn-based voice practice</td>
+      <td>Assistant response text to be spoken, selected language, voice/model settings, and technical connection data</td>
+      <td><a href="https://inworld.ai/privacy" target="_blank" rel="noopener noreferrer">inworld.ai/privacy</a></td>
+    </tr>
+    <tr>
+      <td><strong>OpenRouter</strong></td>
+      <td>Text-to-speech for certain voice features, including routing to the selected model provider</td>
+      <td>Assistant response text to be spoken, voice instructions or settings, generated-audio request data, and technical metadata</td>
+      <td><a href="https://openrouter.ai/privacy" target="_blank" rel="noopener noreferrer">openrouter.ai/privacy</a></td>
     </tr>
     <tr>
       <td><strong>Langfuse</strong></td>
@@ -192,6 +234,12 @@
       <td>Product analytics and session replay when configured for the build</td>
       <td>Usage events, account identifiers, app metadata, and limited replay data subject to the Application's masking configuration</td>
       <td><a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">posthog.com/privacy</a></td>
+    </tr>
+    <tr>
+      <td><strong>Sentry</strong></td>
+      <td>Error, crash, and backend failure monitoring</td>
+      <td>Error messages, stack traces, diagnostic and technical metadata, app/device/operating-system information, request identifiers, and, where configured, an internal account identifier</td>
+      <td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">sentry.io/privacy</a></td>
     </tr>
     <tr>
       <td><strong>RevenueCat</strong></td>
@@ -223,8 +271,35 @@
       <td>Standard technical metadata associated with app framework and service operations</td>
       <td><a href="https://expo.dev/privacy" target="_blank" rel="noopener noreferrer">expo.dev/privacy</a></td>
     </tr>
+    <tr>
+      <td><strong>TikTok Business SDK</strong></td>
+      <td>Advertising attribution and conversion measurement in builds where the SDK is configured</td>
+      <td>Device, network, and advertising identifiers as made available by the device and permissions; app install/launch events; completed store-transaction events; and the standard <code>CompleteTutorial</code> event after onboarding. We do not send conversation content, onboarding answers, or payment-attempt details through our TikTok event bridge.</td>
+      <td><a href="https://www.tiktok.com/legal/page/us/privacy-policy/en" target="_blank" rel="noopener noreferrer">tiktok.com/privacy-policy</a></td>
+    </tr>
   </tbody>
 </table>
+
+<h2 id="advertising-attribution">Advertising and Attribution</h2>
+
+<p>
+  The Application does not show third-party advertisements. In builds where the
+  TikTok Business SDK is configured, TikTok may process device and technical
+  information, app install/launch information, completed StoreKit transactions,
+  and limited standard conversion events to measure the effectiveness of our
+  advertising and attribute installs or subscriptions. The Application sends
+  only the allow-listed conversion event described above through its own TikTok
+  bridge; it does not send chat messages, transcripts, onboarding answers, or
+  payment-attempt details through that bridge.
+</p>
+
+<p>
+  On iOS, the Application may request App Tracking Transparency permission after
+  your first successful sign-in. TikTok receives the IDFA only if you grant that system permission.
+  You can change this choice in your iOS privacy settings. Declining permission
+  does not prevent you from using the Application, although advertising
+  measurement may be less precise.
+</p>
 
 <h2>Disclosure of Information</h2>
 
@@ -243,6 +318,12 @@
   and vocabulary records may be retained for as long as needed to operate the
   Application, maintain your account, comply with legal
   obligations, resolve disputes, and enforce our agreements.
+</p>
+
+<p>
+  Third-party service providers may retain data they process under their own
+  privacy notices and our applicable agreements with them. Their processing and
+  retention may occur outside your country of residence.
 </p>
 
 <p>
@@ -273,6 +354,12 @@
   If the Application build you are using includes analytics or replay features,
   some controls may also be available through device settings, platform privacy
   controls, or future in-app settings as they are added.
+</p>
+
+<p>
+  You can manage iOS App Tracking Transparency permission in your device
+  settings. Where available, you may also use the privacy choices offered by a
+  third-party provider through the links in the table above.
 </p>
 
 <h2>Children's Privacy</h2>
